@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class AttachPoint : MonoBehaviour
 {
+
+    public string LimbName;
+
+    MeshRenderer m_Renderer;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_Renderer = GetComponent<MeshRenderer>();
+        m_Renderer.enabled = false; // Should we hide the mesh renderer on creation?
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnMouseOver()
     {
-        
+        Debug.Log("MOUSE EVENT");
+        m_Renderer.enabled = true;
+    }
+
+    void OnMouseExit()
+    {
+        m_Renderer.enabled = false;
     }
 }
