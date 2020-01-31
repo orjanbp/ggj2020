@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttachPoint : MonoBehaviour
+public class Animal : MonoBehaviour
 {
 
-    public string LimbName;
+    public AttachPoint[] LimbCollection;
 
     // Start is called before the first frame update
     void Start()
