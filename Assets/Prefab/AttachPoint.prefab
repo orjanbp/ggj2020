@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4625217596862192056}
   - component: {fileID: 7947188948089978082}
   - component: {fileID: 4023557593104723931}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,3 +106,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8a3e5c413437547b3d1d3b5343966e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LimbName: 
