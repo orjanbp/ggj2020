@@ -16,13 +16,12 @@ public class AttachPoint : MonoBehaviour
         m_Renderer.enabled = false; // Should we hide the mesh renderer on creation?
     }
 
-    void OnMouseOver()
+    public void OnHighlightStart()
     {
-        Debug.Log("MOUSE EVENT");
         m_Renderer.enabled = true;
     }
 
-    void OnMouseExit()
+    public void OnHighlightExit()
     {
         m_Renderer.enabled = false;
     }
