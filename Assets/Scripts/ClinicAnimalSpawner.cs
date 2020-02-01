@@ -31,6 +31,7 @@ public class ClinicAnimalSpawner : MonoBehaviour
     }
 
     IEnumerator SpawnAnimalSequence() {
+        yield return null;
         while (operatingTable.position.y > endHeight) {
             operatingTable.MovePosition(operatingTable.position - Vector3.up * Time.deltaTime * tableSpeed);
             yield return null;
@@ -42,6 +43,7 @@ public class ClinicAnimalSpawner : MonoBehaviour
             operatingTable.MovePosition(operatingTable.position + Vector3.up * Time.deltaTime * tableSpeed);
             yield return null;
         }
+        operatingTable.MovePosition(new Vector3(operatingTable.position.x, startHeight, operatingTable.position.z));
         spawningAnimal = false;
     }
 

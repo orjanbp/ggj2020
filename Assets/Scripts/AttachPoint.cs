@@ -23,7 +23,7 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
         m_Renderer = GetComponent<MeshRenderer>();
         m_Renderer.enabled = false;
 
-        animal = gameObject.GetComponentInParent<Animal>().animal;
+        animal = gameObject.GetComponentInParent<Animal>()?.animal;
         
     }
 

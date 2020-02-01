@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc09518603634af4daef9e8f116f4036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  torque: 0.3
+  torque: 0.8
   inertia: 0.8
 --- !u!64 &4149516852569079264
 MeshCollider:
