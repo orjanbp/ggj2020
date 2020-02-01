@@ -104,13 +104,14 @@ public class PlayerController : MonoBehaviour
         {
             if (heldMovableObject != null)
             {
+                Vector2 mouseDelta = (Vector2)Input.mousePosition - previousMousePosition;
                 if (heldMovableObject is Limb) {
                     //heldMovableObject.OnMoveInDirection(((Vector2)Input.mousePosition - previousMousePosition) * Time.deltaTime);
                     //currentZOffsetFromCamera = (heldMovableObject.gameObject.transform.position - mainCamera.transform.position).z;
                     playerRigidbody.MovePosition(mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, zOffsetFromCamera)));
                 }
-                else if (heldMovableObject is Draggable) {
-                    heldMovableObject.OnMoveInDirection((Vector2)Input.mousePosition - previousMousePosition);
+                else if (heldMovableObject is Draggable && mouseDelta.magnitude > Vector2.zero.magnitude) {
+                    heldMovableObject.OnMoveInDirection(mouseDelta);
                 }
             }
         }
