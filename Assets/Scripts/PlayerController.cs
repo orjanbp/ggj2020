@@ -73,11 +73,12 @@ public class PlayerController : MonoBehaviour
             if (highlightedLimb != null)
             {
                 heldLimb = highlightedLimb;
+                heldLimb.OnMoveStart();
             }
             else if (highlightedDraggable != null)
             {
                 draggingDraggable = highlightedDraggable;
-                draggingDraggable.OnDragStart();
+                draggingDraggable.OnMoveStart();
             }
         }
         else if (Input.GetMouseButtonUp(0))
@@ -88,13 +89,13 @@ public class PlayerController : MonoBehaviour
             }
             else if (draggingDraggable != null)
             {
-                draggingDraggable.OnDragStop();
+                draggingDraggable.OnMoveStop();
                 draggingDraggable = null;
             }
         }
         else if (Input.GetMouseButton(0))
         {
-            draggingDraggable.OnDragInDirection((Vector2)Input.mousePosition - previousMousePosition);
+            draggingDraggable.OnMoveInDirection((Vector2)Input.mousePosition - previousMousePosition);
         }
 
         previousMousePosition = Input.mousePosition;

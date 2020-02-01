@@ -2,22 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Draggable : MovableObject
+public class MovableObject : MonoBehaviour
 {
-
-    public override void OnMoveStart()
+    public virtual void OnMoveStart()
     {
         Debug.Log("On drag start");
     }
 
-    public override void OnMoveInDirection(Vector2 direction)
+    public virtual void OnMoveInDirection(Vector2 direction)
     {
         Debug.Log("Draggable DIRECTION X " + direction.x + " Y " + direction.y);
     }
 
-    public override void OnMoveStop()
+    public virtual void OnMoveStop()
     {
         Debug.Log("On Drag end");
     }
-
 }
