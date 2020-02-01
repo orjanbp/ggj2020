@@ -148,6 +148,8 @@ MonoBehaviour:
   - {fileID: 6683590908252829209}
   - {fileID: 6683590908331913176}
   - {fileID: 6683590908525168974}
+  m_LimbManager: {fileID: 6651007617514637397, guid: e5c28d8a64e5cb0488f417a7b8e137d6,
+    type: 3}
 --- !u!1001 &7716476872803575445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -489,7 +491,7 @@ PrefabInstance:
     - target: {fileID: 4625217596862192056, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7331954476648187452, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
