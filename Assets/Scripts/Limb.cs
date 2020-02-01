@@ -59,7 +59,7 @@ public class Limb : MovableObject, IHightlightableObject
     {
         // Display the explosion radius when selected
         Gizmos.color = new Color(1, 1, 0, 0.75F);
-        Vector3 anchorRealWorld = transform.position + anchorPoint;
+        Vector3 anchorRealWorld = transform.position + anchorPointOffset;
         Gizmos.DrawRay(anchorRealWorld, transform.right);
     }
     #endif
