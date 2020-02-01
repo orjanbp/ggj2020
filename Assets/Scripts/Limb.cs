@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Limb : MovableObject, IHightlightableObject
 {
-    public Vector3 anchorPoint;
+    public Vector3 anchorPointOffset;
     private Rigidbody localRigidbody;
     // Start is called before the first frame update
     void Awake()
