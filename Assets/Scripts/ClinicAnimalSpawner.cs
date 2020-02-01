@@ -16,18 +16,27 @@ public class ClinicAnimalSpawner : MonoBehaviour
 
     private void Start() {
         startHeight = operatingTable.position.y;
+        SpawnNewAnimal();
     }
 
     private void Update() {
-        if (currentAnimal == null && !spawningAnimal) {
-            spawningAnimal = true;
-            StartCoroutine(SpawnAnimalSequence());
+        //if (currentAnimal == null && !spawningAnimal) {
+
             
-        }
+        //}
         if (Input.GetKeyDown(KeyCode.Space)) {
-            Destroy(currentAnimal.gameObject);
+            SpawnNewAnimal();
         }
 
+    }
+
+    public void SpawnNewAnimal() {
+        if (!spawningAnimal) {
+            if (currentAnimal != null)
+                Destroy(currentAnimal.gameObject);
+            spawningAnimal = true;
+            StartCoroutine(SpawnAnimalSequence());
+        }
     }
 
     IEnumerator SpawnAnimalSequence() {

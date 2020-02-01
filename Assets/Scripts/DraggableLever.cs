@@ -35,10 +35,4 @@ public class DraggableLever : Draggable
         //}
     }
 
-    private void Update() {
-        if (!hasTriggered && pivotRigidbody.rotation.eulerAngles.x > triggerAngle) {
-            hasTriggered = true;
-        }
-    }
-
 }
