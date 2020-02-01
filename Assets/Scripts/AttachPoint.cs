@@ -26,10 +26,17 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
     }
 
     public void AttachLimb(Limb limb) {
+        limb.transform.rotation = transform.rotation;
+        limb.transform.position = transform.position;
         limb.transform.position -= limb.transform.TransformDirection(limb.anchorPointOffset);
         limb.GetComponent<Rigidbody>().useGravity = false;
         limb.GetComponent<Rigidbody>().isKinematic = true;
         limb.transform.parent = transform;
+        currentLimb = limb;
+    }
+
+    public bool HasLimb() {
+        return currentLimb != null;
     }
 
     public void HightlightStart()

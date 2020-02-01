@@ -24,9 +24,10 @@ public class Limb : MovableObject, IHightlightableObject
     }
 
     public override void OnMoveStart() {
-        Debug.Log("On drag start");
+        
         //localRigidbody.isKinematic = true;
-        gameObject.layer = 11;
+        gameObject.layer = LayerMask.NameToLayer("HeldObject");
+        Debug.Log("On drag start, set to layer " + LayerMask.LayerToName(gameObject.layer));
         transform.eulerAngles = Vector3.zero;
     }
 
@@ -39,7 +40,7 @@ public class Limb : MovableObject, IHightlightableObject
     public override void OnMoveStop() {
         Debug.Log("On Drag end");
         //localRigidbody.isKinematic = false;
-        gameObject.layer = 9;
+        gameObject.layer = LayerMask.NameToLayer("Limb");
     }
 
     public override Vector3 GetMoveOffset() {

@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         allRaycastLayers = LayerMask.GetMask("AttachPoint", "Limb", "Draggable");
-        holdingLimbRaycastLayers = LayerMask.GetMask("HeldObject");
+        holdingLimbRaycastLayers = LayerMask.GetMask("AttachPoint");
     }
 
     // Update is called once per frame
@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         int currentLayerMask = allRaycastLayers;
         if (heldMovableObject != null && heldMovableObject is Limb) {
+            //Debug.Log("USING holdingLimbRaycastLayers");
             currentLayerMask = holdingLimbRaycastLayers;
         }
 
@@ -40,11 +41,10 @@ public class PlayerController : MonoBehaviour
         Ray inputRay = mainCamera.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(inputRay.origin, inputRay.direction, Color.blue, 1f);
         RaycastHit hit;
-        if (shouldRaycast && Physics.Raycast(inputRay, out hit, currentLayerMask))
+        if (shouldRaycast && Physics.Raycast(inputRay, out hit, 40, currentLayerMask))
         {
             if (hit.collider.gameObject.layer == 8 || hit.collider.gameObject.layer == 9 || hit.collider.gameObject.layer == 10)
             {
-
                 IHightlightableObject highlightableObject = hit.collider.gameObject.GetComponent<IHightlightableObject>();
                 if (highlightableObject != null && highlightableObject != currentHightlightedObject) {
                     if (currentHightlightedObject != null)
@@ -92,6 +92,9 @@ public class PlayerController : MonoBehaviour
             {
                 playerHingeJoint.connectedBody = null;
                 heldMovableObject.OnMoveStop();
+                if (currentHightlightedObject != null && currentHightlightedObject is AttachPoint && heldMovableObject is Limb) {
+                    (currentHightlightedObject as AttachPoint).AttachLimb(heldMovableObject as Limb);
+                }
                 heldMovableObject = null;
             }
         }
