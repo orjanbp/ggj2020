@@ -31,15 +31,15 @@ public class ClinicAnimalSpawner : MonoBehaviour
     }
 
     IEnumerator SpawnAnimalSequence() {
-        while (operatingTable.position.y < endHeight) {
-            operatingTable.MovePosition(operatingTable.position + Vector3.up * Time.deltaTime * tableSpeed);
+        while (operatingTable.position.y > endHeight) {
+            operatingTable.MovePosition(operatingTable.position - Vector3.up * Time.deltaTime * tableSpeed);
             yield return null;
         }
         currentAnimal = Instantiate(animalPrefab, animalSpawnPoint.position, animalSpawnPoint.rotation).GetComponent<Animal>();
         currentAnimal.animal = new string[] { "cat", "dog", "crow" }[Random.Range(0, 3)];
         currentAnimal.transform.parent = animalSpawnPoint.transform;
-        while (operatingTable.position.y > startHeight) {
-            operatingTable.MovePosition(operatingTable.position - Vector3.up * Time.deltaTime * tableSpeed);
+        while (operatingTable.position.y < startHeight) {
+            operatingTable.MovePosition(operatingTable.position + Vector3.up * Time.deltaTime * tableSpeed);
             yield return null;
         }
         spawningAnimal = false;
