@@ -14,14 +14,14 @@ public class PlayerController : MonoBehaviour
     IHightlightableObject currentHightlightedObject;
     
     private Vector2 previousMousePosition;
-    private const float zOffsetFromCamera = 9f;
+    private const float zOffsetFromCamera = 4f;
     int allRaycastLayers = 0;
     int holdingLimbRaycastLayers = 0;
     // Start is called before the first frame update
     void Start()
     {
         allRaycastLayers = LayerMask.GetMask("AttachPoint", "Limb", "Draggable");
-        holdingLimbRaycastLayers = LayerMask.GetMask("AttachPoint");
+        holdingLimbRaycastLayers = LayerMask.GetMask("HeldObject");
     }
 
     // Update is called once per frame
