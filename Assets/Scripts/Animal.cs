@@ -11,10 +11,15 @@ public class Animal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach (AttachPoint point in LimbCollection)
+        foreach (AttachPoint attPoint in LimbCollection)
         {
-            var newLimb = m_LimbManager.GetRandomLimb();
-            Debug.Log("ADDING NEW LIMB: " + point + newLimb);
+            var attPos = attPoint.transform.position;
+            var attRot = attPoint.transform.rotation;
+
+            var newLimb = Instantiate(m_LimbManager.GetRandomLimb(), attPos, attRot);
+            newLimb.transform.position -= newLimb.transform.TransformDirection(newLimb.anchorPointOffset);
+            Debug.Log("ADDING NEW LIMB: " + attPoint + newLimb);
+            Debug.Log(newLimb.anchorPointOffset);
         }
     }
 
