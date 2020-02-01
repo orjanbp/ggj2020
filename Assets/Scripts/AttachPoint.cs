@@ -10,6 +10,11 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
     Animal currentAnimalRef;
     Limb currentLimb;
     MeshRenderer m_Renderer;
+    Collider collider;
+
+    void Awake() {
+        collider = GetComponent<Collider>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +24,7 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
         m_Renderer.enabled = false;
 
         animal = gameObject.GetComponentInParent<Animal>().animal;
+        
     }
 
     public void SetAnimalRef(Animal newAnimalRef) {
@@ -32,7 +38,19 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
         limb.GetComponent<Rigidbody>().useGravity = false;
         limb.GetComponent<Rigidbody>().isKinematic = true;
         limb.transform.parent = transform;
+        limb.SetAttachPoint(this);
         currentLimb = limb;
+        collider.enabled = false;
+    }
+    public void DetachLimb() {
+        if (currentLimb != null) {
+            currentLimb.GetComponent<Rigidbody>().useGravity = true;
+            currentLimb.GetComponent<Rigidbody>().isKinematic = false;
+            currentLimb.transform.parent = null;
+            currentLimb.SetAttachPoint(null);
+            currentLimb = null;
+            collider.enabled = true;
+        }
     }
 
     public bool HasLimb() {

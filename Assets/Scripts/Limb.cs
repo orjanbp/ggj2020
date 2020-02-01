@@ -11,20 +11,20 @@ public class Limb : MovableObject, IHightlightableObject
 
     public Vector3 anchorPointOffset;
     private Rigidbody localRigidbody;
+    private AttachPoint currentAttachPoint;
     // Start is called before the first frame update
     void Awake()
     {
         localRigidbody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
+    public void SetAttachPoint(AttachPoint attachPoint) {
+        currentAttachPoint = attachPoint;
     }
 
     public override void OnMoveStart() {
-        
+        if (currentAttachPoint != null)
+            currentAttachPoint.DetachLimb();
         //localRigidbody.isKinematic = true;
         gameObject.layer = LayerMask.NameToLayer("HeldObject");
         Debug.Log("On drag start, set to layer " + LayerMask.LayerToName(gameObject.layer));

@@ -93,7 +93,9 @@ public class PlayerController : MonoBehaviour
                 playerHingeJoint.connectedBody = null;
                 heldMovableObject.OnMoveStop();
                 if (currentHightlightedObject != null && currentHightlightedObject is AttachPoint && heldMovableObject is Limb) {
-                    (currentHightlightedObject as AttachPoint).AttachLimb(heldMovableObject as Limb);
+                    AttachPoint attachPoint = currentHightlightedObject as AttachPoint;
+                    if (!attachPoint.HasLimb())
+                        attachPoint.AttachLimb(heldMovableObject as Limb);
                 }
                 heldMovableObject = null;
             }
