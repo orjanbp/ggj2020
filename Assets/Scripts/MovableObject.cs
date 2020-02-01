@@ -24,5 +24,8 @@ public class MovableObject : MonoBehaviour
 
     }
 
+    public virtual Vector3 GetMoveOffset() {
+        return Vector3.zero;
+    }
 
 }
