@@ -75,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 3473721007679347464, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Name
-      value: CatFrontLeg Variant
+      value: CatFrontLeg
       objectReference: {fileID: 0}
     - target: {fileID: 7574155484028022854, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
