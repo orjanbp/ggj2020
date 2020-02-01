@@ -6,8 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     public Camera mainCamera;
 
-    private Limb heldLimb;
-    private Draggable draggingDraggable;
+//    private Limb heldLimb;
+//    private Draggable draggingDraggable;
+    private MovableObject heldMovableObject;
+    IHightlightableObject currentHightlightedObject;
 
     private AttachPoint highlightedAttachPoint;
     private Limb highlightedLimb;
@@ -23,79 +25,61 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Ray inputRay = mainCamera.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(inputRay.origin, inputRay.direction, Color.blue, 1f);
         RaycastHit hit;
         if (Physics.Raycast(inputRay, out hit))
         {
-            if (hit.collider.gameObject.layer == 8)
+            if (hit.collider.gameObject.layer == 8 || hit.collider.gameObject.layer == 9 || hit.collider.gameObject.layer == 10)
             {
-                AttachPoint attachPoint = hit.collider.gameObject.GetComponent<AttachPoint>();
-                if (attachPoint != null)
+
+                IHightlightableObject highlightableObject = hit.collider.gameObject.GetComponent<IHightlightableObject>();
+                if (highlightableObject != null)
                 {
-                    if (highlightedAttachPoint != null)
-                        highlightedAttachPoint.OnHighlightExit();
-                    highlightedAttachPoint = attachPoint;
-                    highlightedAttachPoint.OnHighlightStart();
+                    if (currentHightlightedObject != null)
+                        currentHightlightedObject.HightlightEnd();
+                    currentHightlightedObject = highlightableObject;
+                    currentHightlightedObject.HightlightStart();
                     Debug.Log("FOUND ATTACH POINT");
                 }
             }
             else
             {
-                if (highlightedAttachPoint != null)
-                    highlightedAttachPoint.OnHighlightExit();
+                if (currentHightlightedObject != null)
+                    currentHightlightedObject.HightlightEnd();
             }
-            if (hit.collider.gameObject.layer == 9)
+        }
+        else
+        {
+            if (currentHightlightedObject != null)
             {
-                Limb limb = hit.collider.gameObject.GetComponent<Limb>();
-                if (limb != null)
-                {
-                    highlightedLimb = limb;
-                    Debug.Log("FOUND LIMB!");
-                }
-            }
-            else
-            {
-                highlightedLimb = null;
-            }
-            if (hit.collider.gameObject.layer == 10)
-            {
-                Draggable hitDraggable = hit.collider.gameObject.GetComponent<Draggable>();
-                if (hitDraggable != null)
-                    highlightedDraggable = hitDraggable;
-            }
-            else
-            {
-                highlightedDraggable = null;
+                Debug.Log("Reset Highlighted");
+                currentHightlightedObject.HightlightEnd();
+                currentHightlightedObject = null;
             }
         }
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (highlightedLimb != null)
+            MovableObject moveableObject = currentHightlightedObject.GetGameObject().GetComponent<MovableObject>();
+            if (moveableObject != null)
             {
-                heldLimb = highlightedLimb;
-                heldLimb.OnMoveStart();
+                heldMovableObject = moveableObject;
+                heldMovableObject.OnMoveStart();
             }
-            else if (highlightedDraggable != null)
-            {
-                draggingDraggable = highlightedDraggable;
-                draggingDraggable.OnMoveStart();
-            }
+            
         }
         else if (Input.GetMouseButtonUp(0))
         {
-            if (heldLimb != null)
+            if (heldMovableObject != null)
             {
-                heldLimb = null;
-            }
-            else if (draggingDraggable != null)
-            {
-                draggingDraggable.OnMoveStop();
-                draggingDraggable = null;
+                heldMovableObject.OnMoveStop();
+                heldMovableObject = null;
             }
         }
         else if (Input.GetMouseButton(0))
         {
-            draggingDraggable.OnMoveInDirection((Vector2)Input.mousePosition - previousMousePosition);
+            if (heldMovableObject != null)
+                heldMovableObject.OnMoveInDirection(((Vector2)Input.mousePosition - previousMousePosition) * Time.deltaTime);
         }
 
         previousMousePosition = Input.mousePosition;
