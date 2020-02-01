@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Draggable : MovableObject, IHightlightableObject
 {
-
     public override void OnMoveStart()
     {
         Debug.Log("On drag start");
@@ -12,7 +11,7 @@ public class Draggable : MovableObject, IHightlightableObject
 
     public override void OnMoveInDirection(Vector2 direction)
     {
-        Debug.Log("Draggable DIRECTION X " + direction.x + " Y " + direction.y);
+        Debug.Log("Draggable DIRECTION X " + direction.x + " Y " + direction.y);       
     }
 
     public override void OnMoveStop()
