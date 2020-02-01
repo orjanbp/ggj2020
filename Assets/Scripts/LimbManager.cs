@@ -10,13 +10,14 @@ public class LimbManager : MonoBehaviour
 
     public Limb GetRandomLimb()
     {
-        var randLimb = null; // TODO: Fetch limb
+        var randLimb = LimbList[Random.Range(0, LimbList.Length)];
+        Debug.Log("Random limb: " + randLimb);
         return randLimb;
     }
 
-    public Limb GetRandomHead()
-    {
-        var randHead = null; // TODO: Fetch head
-        return randHead;
-    }
+    //public Limb GetRandomHead()
+    //{
+    //    var randHead = new Limb(); // TODO: Fetch head
+    //    return randHead;
+    //}
 }
