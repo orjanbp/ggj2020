@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class AttachPoint : MonoBehaviour, IHightlightableObject
 {
-    // Identify type of limb
-    public string limbType;
-
-    // Type of animal, inherited from Animal
-    public string animal;
+    public string limbType; // Identify type of limb
+    public string animal;   // Type of animal, inherited from Animal
 
     MeshRenderer m_Renderer;
 

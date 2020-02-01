@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-
     public AttachPoint[] LimbCollection;
     public LimbManager m_LimbManager;
 
