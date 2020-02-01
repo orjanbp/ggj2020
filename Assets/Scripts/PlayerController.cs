@@ -5,54 +5,66 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Camera mainCamera;
+    public Rigidbody playerRigidbody;
+    public HingeJoint playerHingeJoint;
 
 //    private Limb heldLimb;
 //    private Draggable draggingDraggable;
     private MovableObject heldMovableObject;
     IHightlightableObject currentHightlightedObject;
-
-    private AttachPoint highlightedAttachPoint;
-    private Limb highlightedLimb;
-    private Draggable highlightedDraggable;
+    
     private Vector2 previousMousePosition;
+    private const float zOffsetFromCamera = 9f;
+    int allRaycastLayers = 0;
+    int holdingLimbRaycastLayers = 0;
     // Start is called before the first frame update
     void Start()
     {
-
+        allRaycastLayers = LayerMask.GetMask("AttachPoint", "Limb", "Draggable");
+        holdingLimbRaycastLayers = LayerMask.GetMask("AttachPoint");
     }
 
     // Update is called once per frame
     void Update()
     {
+        int currentLayerMask = allRaycastLayers;
+        if (heldMovableObject != null && heldMovableObject is Limb) {
+            currentLayerMask = holdingLimbRaycastLayers;
+        }
+
+        bool shouldRaycast = true;
+        if (heldMovableObject != null && heldMovableObject is Draggable) {
+            shouldRaycast = false;
+        }
+
         Ray inputRay = mainCamera.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(inputRay.origin, inputRay.direction, Color.blue, 1f);
         RaycastHit hit;
-        if (Physics.Raycast(inputRay, out hit))
+        if (shouldRaycast && Physics.Raycast(inputRay, out hit, currentLayerMask))
         {
             if (hit.collider.gameObject.layer == 8 || hit.collider.gameObject.layer == 9 || hit.collider.gameObject.layer == 10)
             {
 
                 IHightlightableObject highlightableObject = hit.collider.gameObject.GetComponent<IHightlightableObject>();
-                if (highlightableObject != null)
-                {
+                if (highlightableObject != null && highlightableObject != currentHightlightedObject) {
                     if (currentHightlightedObject != null)
                         currentHightlightedObject.HightlightEnd();
                     currentHightlightedObject = highlightableObject;
                     currentHightlightedObject.HightlightStart();
-                    Debug.Log("FOUND ATTACH POINT");
                 }
             }
             else
             {
-                if (currentHightlightedObject != null)
+                if (currentHightlightedObject != null) {
                     currentHightlightedObject.HightlightEnd();
+                    currentHightlightedObject = null;
+                }
             }
         }
         else
         {
             if (currentHightlightedObject != null)
             {
-                Debug.Log("Reset Highlighted");
                 currentHightlightedObject.HightlightEnd();
                 currentHightlightedObject = null;
             }
@@ -60,11 +72,17 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            MovableObject moveableObject = currentHightlightedObject.GetGameObject().GetComponent<MovableObject>();
-            if (moveableObject != null)
-            {
-                heldMovableObject = moveableObject;
-                heldMovableObject.OnMoveStart();
+            if (currentHightlightedObject != null) {
+                MovableObject moveableObject = currentHightlightedObject.GetGameObject().GetComponent<MovableObject>();
+                if (moveableObject != null) {
+                    heldMovableObject = moveableObject;
+                    heldMovableObject.OnMoveStart();
+                    //currentZOffsetFromCamera = (heldMovableObject.gameObject.transform.position - mainCamera.transform.position).z;
+                    playerRigidbody.MovePosition(heldMovableObject.transform.position);
+                    //Limb move offset is from -1 to 1 in localspace. Turn it into normal -0.5 to 0.5 to use it as an anchor
+                    playerHingeJoint.connectedAnchor = heldMovableObject.GetMoveOffset() * 0.5f; //heldMovableObject.transform.
+                    playerHingeJoint.connectedBody = heldMovableObject.GetComponent<Rigidbody>();
+                }
             }
             
         }
@@ -72,6 +90,7 @@ public class PlayerController : MonoBehaviour
         {
             if (heldMovableObject != null)
             {
+                playerHingeJoint.connectedBody = null;
                 heldMovableObject.OnMoveStop();
                 heldMovableObject = null;
             }
@@ -80,9 +99,14 @@ public class PlayerController : MonoBehaviour
         {
             if (heldMovableObject != null)
             {
-                //heldMovableObject.OnMoveInDirection(((Vector2)Input.mousePosition - previousMousePosition) * Time.deltaTime);
-                Vector3 fromCameraToHeldObject = heldMovableObject.gameObject.transform.position - mainCamera.transform.position;
-                heldMovableObject.OnMoveSetPosition(mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, fromCameraToHeldObject.z)));
+                if (heldMovableObject is Limb) {
+                    //heldMovableObject.OnMoveInDirection(((Vector2)Input.mousePosition - previousMousePosition) * Time.deltaTime);
+                    //currentZOffsetFromCamera = (heldMovableObject.gameObject.transform.position - mainCamera.transform.position).z;
+                    playerRigidbody.MovePosition(mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, zOffsetFromCamera)));
+                }
+                else if (heldMovableObject is Draggable) {
+                    heldMovableObject.OnMoveInDirection((Vector2)Input.mousePosition - previousMousePosition);
+                }
             }
         }
 

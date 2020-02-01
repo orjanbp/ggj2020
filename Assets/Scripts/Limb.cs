@@ -7,7 +7,7 @@ public class Limb : MovableObject, IHightlightableObject
 {
     // Identify type and animal of limb
     public string limbType;
-    public string limbAnimal;
+    public string animal;
 
     public Vector3 anchorPointOffset;
     private Rigidbody localRigidbody;
