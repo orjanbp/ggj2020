@@ -15,10 +15,10 @@ public class LimbManager : MonoBehaviour
 
         foreach (Limb limb in limbList)
         {
-            if (limb.limbAnimal == limbAnimal)
+            if (limb.animal == limbAnimal)
             {
                 limbsForAnimal.Add(limb);
-                Debug.Log("Adding limb ... " + limb.limbType + " for " + limb.limbAnimal);
+                Debug.Log("Adding limb ... " + limb.limbType + " for " + limb.animal);
             }
         }
 
@@ -34,7 +34,7 @@ public class LimbManager : MonoBehaviour
 
         // Fallback
         var randLimb = limbList[Random.Range(0, limbList.Length)];
-        Debug.LogError("Fallback limb: " + randLimb.limbAnimal + " " + randLimb.limbType);
+        Debug.LogError("Fallback limb: " + randLimb.animal + " " + randLimb.limbType);
         return randLimb;
     }
 }
