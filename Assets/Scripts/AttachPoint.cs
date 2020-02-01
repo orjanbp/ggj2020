@@ -59,7 +59,8 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
 
     public void HightlightStart()
     {
-        m_Renderer.enabled = true;
+        if (!HasLimb())
+            m_Renderer.enabled = true;
     }
 
     public void HightlightEnd()

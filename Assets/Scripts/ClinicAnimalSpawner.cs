@@ -24,6 +24,9 @@ public class ClinicAnimalSpawner : MonoBehaviour
             StartCoroutine(SpawnAnimalSequence());
             
         }
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            Destroy(currentAnimal.gameObject);
+        }
 
     }
 
