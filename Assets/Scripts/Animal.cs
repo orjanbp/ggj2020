@@ -8,12 +8,14 @@ public class Animal : MonoBehaviour
     public AttachPoint[] LimbCollection;
     public LimbManager m_LimbManager;
 
+    public string animal;
+
     // Start is called before the first frame update
     void Start()
     {
         foreach (AttachPoint attPoint in LimbCollection)
         {
-            var fetcher = m_LimbManager.FetchLimb(attPoint.limbAnimal, attPoint.limbType);
+            var fetcher = m_LimbManager.FetchLimb(animal, attPoint.limbType);
             var attPos = attPoint.transform.position;
             var attRot = attPoint.transform.rotation;
 
