@@ -8,6 +8,7 @@ public class Animal : MonoBehaviour
     public LimbManager m_LimbManager;
 
     public string animal;
+    public bool debugKeepAllLimbs;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,7 @@ public class Animal : MonoBehaviour
         for (int i = 0; i < attachPoints.Length; i++)
         {
             attachPoints[i].SetAnimalRef(this);
-            if (i == firstMissingLimb || Random.value < 0.25f)
+            if (!debugKeepAllLimbs && (i == firstMissingLimb || Random.value < 0.25f))
                 continue;
             var limbPrefab = m_LimbManager.FetchLimb(animal, attachPoints[i].limbType);
             var attPos = attachPoints[i].transform.position;
