@@ -20,5 +20,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
-    m_Floats: []
+    m_Floats:
+    - _LightOffset: 0
+    - _StepOffset: -0.33
+    - _StepRange: 0
     m_Colors: []
