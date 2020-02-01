@@ -7,6 +7,8 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
     public string limbType; // Identify type of limb
     public string animal;   // Type of animal, inherited from Animal
 
+    Animal currentAnimalRef;
+    Limb currentLimb;
     MeshRenderer m_Renderer;
 
     // Start is called before the first frame update
@@ -17,6 +19,17 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
         m_Renderer.enabled = false;
 
         animal = gameObject.GetComponentInParent<Animal>().animal;
+    }
+
+    public void SetAnimalRef(Animal newAnimalRef) {
+        currentAnimalRef = newAnimalRef;
+    }
+
+    public void AttachLimb(Limb limb) {
+        limb.transform.position -= limb.transform.TransformDirection(limb.anchorPointOffset);
+        limb.GetComponent<Rigidbody>().useGravity = false;
+        limb.GetComponent<Rigidbody>().isKinematic = true;
+        limb.transform.parent = transform;
     }
 
     public void HightlightStart()
