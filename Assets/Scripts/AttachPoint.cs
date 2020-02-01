@@ -23,7 +23,7 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
         m_Renderer = GetComponent<MeshRenderer>();
         m_Renderer.enabled = false;
 
-        animal = gameObject.GetComponentInParent<Animal>().animal;
+        animal = gameObject.GetComponentInParent<Animal>()?.animal;
         
     }
 
@@ -32,6 +32,7 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
     }
 
     public void AttachLimb(Limb limb) {
+        SoundEffects.PlayAudioAtLocation("critch", transform.position);
         limb.transform.rotation = transform.rotation;
         limb.transform.position = transform.position;
         limb.transform.position -= limb.transform.TransformDirection(limb.anchorPointOffset);
