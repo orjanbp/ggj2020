@@ -79,7 +79,11 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetMouseButton(0))
         {
             if (heldMovableObject != null)
-                heldMovableObject.OnMoveInDirection(((Vector2)Input.mousePosition - previousMousePosition) * Time.deltaTime);
+            {
+                //heldMovableObject.OnMoveInDirection(((Vector2)Input.mousePosition - previousMousePosition) * Time.deltaTime);
+                Vector3 fromCameraToHeldObject = heldMovableObject.gameObject.transform.position - mainCamera.transform.position;
+                heldMovableObject.OnMoveSetPosition(mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, fromCameraToHeldObject.z)));
+            }
         }
 
         previousMousePosition = Input.mousePosition;

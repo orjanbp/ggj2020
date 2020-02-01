@@ -19,5 +19,10 @@ public class MovableObject : MonoBehaviour
         Debug.Log("On Drag end");
     }
 
+    public virtual void OnMoveSetPosition(Vector3 position)
+    {
+
+    }
+
 
 }

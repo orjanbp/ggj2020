@@ -39,6 +39,11 @@ public class Limb : MovableObject, IHightlightableObject
         gameObject.layer = 9;
     }
 
+    public override void OnMoveSetPosition(Vector3 newPosition)
+    {
+        localRigidbody.MovePosition(newPosition);
+    }
+
     public void HightlightStart()
     {
 

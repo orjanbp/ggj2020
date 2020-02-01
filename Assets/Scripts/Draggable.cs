@@ -20,6 +20,11 @@ public class Draggable : MovableObject, IHightlightableObject
         Debug.Log("On Drag end");
     }
 
+    public override void OnMoveSetPosition(Vector3 newPosition)
+    {
+
+    }
+
     public void HightlightStart()
     {
 
