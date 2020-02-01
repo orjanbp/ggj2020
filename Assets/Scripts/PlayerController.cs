@@ -95,7 +95,10 @@ public class PlayerController : MonoBehaviour
                 if (currentHightlightedObject != null && currentHightlightedObject is AttachPoint && heldMovableObject is Limb) {
                     AttachPoint attachPoint = currentHightlightedObject as AttachPoint;
                     if (!attachPoint.HasLimb())
+                    {
+                        SoundEffects.PlayAudioAtLocation("critch", transform.position);
                         attachPoint.AttachLimb(heldMovableObject as Limb);
+                    }
                 }
                 heldMovableObject = null;
             }

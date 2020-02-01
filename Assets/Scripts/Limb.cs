@@ -24,7 +24,10 @@ public class Limb : MovableObject, IHightlightableObject
 
     public override void OnMoveStart() {
         if (currentAttachPoint != null)
+        {
+            SoundEffects.PlayAudioAtLocation("detach", transform.position);
             currentAttachPoint.DetachLimb();
+        }
         //localRigidbody.isKinematic = true;
         gameObject.layer = LayerMask.NameToLayer("HeldObject");
         Debug.Log("On drag start, set to layer " + LayerMask.LayerToName(gameObject.layer));
