@@ -32,7 +32,6 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
     }
 
     public void AttachLimb(Limb limb) {
-        SoundEffects.PlayAudioAtLocation("critch", transform.position);
         limb.transform.rotation = transform.rotation;
         limb.transform.position = transform.position;
         limb.transform.position -= limb.transform.TransformDirection(limb.anchorPointOffset);
@@ -44,7 +43,7 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
         localCollider.enabled = false;
     }
     public void DetachLimb() {
-        if (currentLimb != null) {
+        if (currentLimb != null) { 
             currentLimb.GetComponent<Rigidbody>().useGravity = true;
             currentLimb.GetComponent<Rigidbody>().isKinematic = false;
             currentLimb.transform.parent = null;

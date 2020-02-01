@@ -52,3 +52,5 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 68d10e90d42c9ff4997444195c8a319e, type: 3}
   - name: bahh
     clip: {fileID: 8300000, guid: 68d10e90d42c9ff4997444195c8a319e, type: 3}
+  - name: detach
+    clip: {fileID: 8300000, guid: 68d10e90d42c9ff4997444195c8a319e, type: 3}
