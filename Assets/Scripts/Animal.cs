@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-    public AttachPoint[] LimbCollection;
+    public AttachPoint[] attachPoints;
     public LimbManager m_LimbManager;
 
     public string animal;
@@ -12,14 +12,20 @@ public class Animal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach (AttachPoint attPoint in LimbCollection)
+        int firstMissingLimb = Random.Range(0, attachPoints.Length);
+        for (int i = 0; i < attachPoints.Length; i++)
         {
-            var fetcher = m_LimbManager.FetchLimb(animal, attPoint.limbType);
-            var attPos = attPoint.transform.position;
-            var attRot = attPoint.transform.rotation;
+            if (i == firstMissingLimb || Random.value < 0.25f)
+                continue;
+            var fetcher = m_LimbManager.FetchLimb(animal, attachPoints[i].limbType);
+            var attPos = attachPoints[i].transform.position;
+            var attRot = attachPoints[i].transform.rotation;
 
             var newLimb = Instantiate(fetcher, attPos, attRot);
             newLimb.transform.position -= newLimb.transform.TransformDirection(newLimb.anchorPointOffset);
+            newLimb.GetComponent<Rigidbody>().useGravity = false;
+            newLimb.GetComponent<Rigidbody>().isKinematic = true;
+            newLimb.transform.parent = transform;
             //Debug.Log("ADDING NEW LIMB: " + attPoint + newLimb);
             //Debug.Log(newLimb.anchorPointOffset);|
         }
