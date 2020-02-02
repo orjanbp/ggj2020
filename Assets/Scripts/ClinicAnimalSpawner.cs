@@ -66,7 +66,7 @@ public class ClinicAnimalSpawner : MonoBehaviour
             float curveAdd = redeemAnimalCurve.Evaluate(timer);
             operatingTable.MovePosition(new Vector3(operatingTable.position.x, startingY + curveAdd, operatingTable.position.z));
             timer += Time.deltaTime;
-            if (timer > 0.5f && !animalAscending) {
+            if (timer > 0.15f && !animalAscending) {
                 animalAscending = true;
                 StartCoroutine(OldAnimalAscender(currentAnimal));
             }
@@ -77,11 +77,11 @@ public class ClinicAnimalSpawner : MonoBehaviour
 
     IEnumerator OldAnimalAscender(Animal animalToAscend) {
         currentAnimal.transform.parent = null;
-        while (currentAnimal.transform.position.y < 10f) {
-            currentAnimal.transform.position += Vector3.up * Time.deltaTime * 5f;
+        while (currentAnimal.transform.position.y < 15f) {
+            currentAnimal.transform.position += Vector3.up * Time.deltaTime * 9f;
             yield return null;
         }
-        Destroy(currentAnimal);
+        Destroy(currentAnimal.gameObject);
     }
 
 }
