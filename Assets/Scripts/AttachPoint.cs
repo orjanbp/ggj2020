@@ -7,6 +7,13 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
     public string limbType; // Identify type of limb
     public string animal;   // Type of animal, inherited from Animal
 
+    public AnimalType animalType;
+    public LimbType limbType_;
+
+    public AnimationCurve attachAnimation;
+    public AnimationCurve idleAnimation;
+
+    float neutralXRotation;
     Animal currentAnimalRef;
     Limb currentLimb;
     MeshRenderer m_Renderer;
@@ -14,6 +21,7 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
 
     void Awake() {
         localCollider = GetComponent<Collider>();
+        neutralXRotation = transform.eulerAngles.x;
     }
 
     // Start is called before the first frame update
@@ -37,10 +45,19 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
         limb.GetComponent<Rigidbody>().useGravity = false;
         limb.GetComponent<Rigidbody>().isKinematic = true;
         limb.transform.parent = transform;
+
+        //Special for weird heads
+        if (limbType_ != LimbType.Head && limb.limbType_ == LimbType.Head) {
+            limb.transform.localPosition = Vector3.zero;
+            if (limbType_ != LimbType.HindLeg)
+                limb.transform.localEulerAngles = new Vector3(0f, 180f, 0f);
+        }
+
         limb.SetAttachPoint(this);
         currentLimb = limb;
         localCollider.enabled = false;
 
+        StartCoroutine(AnimateLimb(attachAnimation));
         // tell the parent what has happened
         if (currentAnimalRef) currentAnimalRef.OnChangeLimbs();
     }
@@ -76,5 +93,16 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
     public GameObject GetGameObject()
     {
         return gameObject;
+    }
+
+    IEnumerator AnimateLimb(AnimationCurve animationCurve) {
+        Debug.Log("WIll start animating");
+        float secondsLength = animationCurve.length;
+        float startTime = Time.time;
+        while (Time.time - startTime < secondsLength) {
+            transform.eulerAngles = new Vector3(neutralXRotation + animationCurve.Evaluate(Time.time - startTime) * 45f, transform.eulerAngles.y, transform.eulerAngles.z);
+            Debug.Log("Got angle " + (neutralXRotation + animationCurve.Evaluate(Time.time - startTime) * 45f) + " from curve evaluation " + animationCurve.Evaluate(Time.time - startTime));
+            yield return null;
+        }
     }
 }

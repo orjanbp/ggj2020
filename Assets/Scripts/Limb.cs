@@ -9,6 +9,9 @@ public class Limb : MovableObject, IHightlightableObject
     public string limbType;
     public string animal;
 
+    public AnimalType animalType;
+    public LimbType limbType_;
+
     public Vector3 anchorPointOffset;
 
     public Renderer limbRenderer;
@@ -98,4 +101,13 @@ public class Limb : MovableObject, IHightlightableObject
         Gizmos.DrawRay(anchorRealWorld, transform.right);
     }
     #endif
+}
+
+
+public enum LimbType {
+    Head,
+    HindLeg,
+    FrontLeg,
+    Tail,
+    Other
 }

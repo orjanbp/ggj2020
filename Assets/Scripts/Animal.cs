@@ -9,6 +9,7 @@ public class Animal : MonoBehaviour
     public GameStateController c_GameState;
 
     public string animal;
+    public AnimalType animalType;
     public bool debugKeepAllLimbs;
     
     // Start is called before the first frame update
@@ -43,4 +44,13 @@ public class Animal : MonoBehaviour
     {
         
     }
+}
+
+public enum AnimalType {
+    Cat,
+    Dog,
+    Crow,
+    Cow,
+    Other,
+    StaticHook
 }
