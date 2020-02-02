@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -454,13 +454,7 @@ Transform:
   - {fileID: 1118520141}
   m_Father: {fileID: 0}
   m_RootOrder: 14
-<<<<<<< HEAD
-  m_LocalEulerAnglesHint: {x: 5.1720004, y: 35.587, z: 0}
-=======
-<<<<<<< Updated upstream
   m_LocalEulerAnglesHint: {x: 5.1720004, y: 24.059002, z: 0}
-=======
-  m_LocalEulerAnglesHint: {x: 5.1720004, y: 35.587, z: 0}
 --- !u!1 &341922210
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,8 +528,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341922210}
   m_CullTransparentMesh: 0
->>>>>>> Stashed changes
->>>>>>> Menu
 --- !u!1001 &347441681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -673,7 +665,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f8a3b0c158dd29840820fce90ee3cdc6, type: 2}
+      objectReference: {fileID: -640421345888577198, guid: 6772ef5d1c2803b46b6bb9fc6014d5a9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6772ef5d1c2803b46b6bb9fc6014d5a9, type: 3}
 --- !u!1 &347441682 stripped
@@ -2154,7 +2147,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh61834
+  m_Name: pb_Mesh114636
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5540,7 +5533,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f8a3b0c158dd29840820fce90ee3cdc6, type: 2}
+  - {fileID: 2100000, guid: bb6ea6fed0dfb674988f657e0352d69a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5984,7 +5977,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f8a3b0c158dd29840820fce90ee3cdc6, type: 2}
+  - {fileID: 2100000, guid: 5f8da77a7c9912e4abeacff87033d252, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
