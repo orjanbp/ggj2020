@@ -193,6 +193,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
       propertyPath: limbType
       value: tail
       objectReference: {fileID: 0}
@@ -351,6 +356,51 @@ PrefabInstance:
       propertyPath: attachAnimation.m_Curve.Array.data[5].time
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].time
+      value: 0.42115182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].value
+      value: 0.18813628
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].inSlope
+      value: -0.30517384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].outSlope
+      value: -0.30517384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].outWeight
+      value: 0.2268183
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].outSlope
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4026320121757408685, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -457,6 +507,11 @@ PrefabInstance:
         type: 3}
       propertyPath: attachAnimation.m_Curve.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
@@ -608,6 +663,51 @@ PrefabInstance:
       propertyPath: attachAnimation.m_Curve.Array.data[5].time
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].time
+      value: 0.42115182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].value
+      value: 0.18813628
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].inSlope
+      value: -0.30517384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].outSlope
+      value: -0.30517384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].outWeight
+      value: 0.2268183
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].outSlope
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4026320121757408685, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -709,6 +809,11 @@ PrefabInstance:
         type: 3}
       propertyPath: attachAnimation.m_Curve.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
@@ -864,6 +969,51 @@ PrefabInstance:
         type: 3}
       propertyPath: attachAnimation.m_Curve.Array.data[5].time
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].time
+      value: 0.42115182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].value
+      value: 0.18813628
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].inSlope
+      value: -0.30517384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].outSlope
+      value: -0.30517384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].outWeight
+      value: 0.2268183
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4026320121757408685, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
@@ -969,6 +1119,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
       propertyPath: limbType
       value: frontleg
       objectReference: {fileID: 0}
@@ -1122,6 +1277,51 @@ PrefabInstance:
       propertyPath: attachAnimation.m_Curve.Array.data[5].time
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].time
+      value: 0.42115182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].value
+      value: 0.18813628
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].inSlope
+      value: -0.30517384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].outSlope
+      value: -0.30517384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].outWeight
+      value: 0.2268183
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].outSlope
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4026320121757408685, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1223,6 +1423,11 @@ PrefabInstance:
         type: 3}
       propertyPath: attachAnimation.m_Curve.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
@@ -1379,6 +1584,51 @@ PrefabInstance:
       propertyPath: attachAnimation.m_Curve.Array.data[5].time
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].time
+      value: 0.42115182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].value
+      value: 0.18813628
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].inSlope
+      value: -0.30517384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].outSlope
+      value: -0.30517384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].outWeight
+      value: 0.2268183
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].outSlope
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4026320121757408685, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1480,6 +1730,11 @@ PrefabInstance:
         type: 3}
       propertyPath: attachAnimation.m_Curve.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
@@ -1635,6 +1890,51 @@ PrefabInstance:
         type: 3}
       propertyPath: attachAnimation.m_Curve.Array.data[5].time
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].time
+      value: 0.42115182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].value
+      value: 0.18813628
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].inSlope
+      value: -0.30517384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].outSlope
+      value: -0.30517384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[1].outWeight
+      value: 0.2268183
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: idleAnimation.m_Curve.Array.data[2].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4026320121757408685, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
