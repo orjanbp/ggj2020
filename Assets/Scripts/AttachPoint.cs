@@ -18,6 +18,8 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
     Limb currentLimb;
     MeshRenderer m_Renderer;
     Collider localCollider;
+    Coroutine currentAnimationRoutine;
+    Coroutine currentIdleRoutine;
 
     void Awake() {
         localCollider = GetComponent<Collider>();
@@ -38,7 +40,7 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
         currentAnimalRef = newAnimalRef;
     }
 
-    public void AttachLimb(Limb limb) {
+    public void AttachLimb(Limb limb, bool playerAttach = false) {
         limb.transform.rotation = transform.rotation;
         limb.transform.position = transform.position;
         limb.transform.position -= limb.transform.TransformDirection(limb.anchorPointOffset);
@@ -57,7 +59,10 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
         currentLimb = limb;
         localCollider.enabled = false;
 
-        StartCoroutine(AnimateLimb(attachAnimation));
+        if (playerAttach)
+            currentAnimationRoutine = StartCoroutine(AnimateLimb(attachAnimation));
+        if (currentIdleRoutine == null)
+            currentIdleRoutine = StartCoroutine(IdleAnimation());
         // tell the parent what has happened
         if (currentAnimalRef) currentAnimalRef.OnChangeLimbs();
     }
@@ -101,7 +106,24 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
         float startTime = Time.time;
         while (Time.time - startTime < secondsLength) {
             transform.eulerAngles = new Vector3(neutralXRotation + animationCurve.Evaluate(Time.time - startTime) * 45f, transform.eulerAngles.y, transform.eulerAngles.z);
-            Debug.Log("Got angle " + (neutralXRotation + animationCurve.Evaluate(Time.time - startTime) * 45f) + " from curve evaluation " + animationCurve.Evaluate(Time.time - startTime));
+            //Debug.Log("Got angle " + (neutralXRotation + animationCurve.Evaluate(Time.time - startTime) * 45f) + " from curve evaluation " + animationCurve.Evaluate(Time.time - startTime));
+            yield return null;
+        }
+        currentAnimationRoutine = null;
+    }
+
+    IEnumerator IdleAnimation() {
+        while (currentAnimationRoutine != null)
+            yield return null;
+        Debug.Log("Doing idle animation on " + gameObject.name);
+        float normalizedCounter = 0f;
+        while (true) {
+            transform.eulerAngles = new Vector3(neutralXRotation + idleAnimation.Evaluate(normalizedCounter) * 45f, transform.eulerAngles.y, transform.eulerAngles.z);
+            normalizedCounter += Time.deltaTime * Random.Range(0.9f, 1.1f);
+            if (normalizedCounter > 1f) {
+                normalizedCounter -= 1f;
+            }
+            //Debug.Log("Got angle " + (neutralXRotation + idleAnimation.Evaluate(Time.time - startTime) * 45f) + " from curve evaluation " + idleAnimation.Evaluate(Time.time - startTime));
             yield return null;
         }
     }

@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
                     if (!attachPoint.HasLimb())
                     {
                         SoundEffects.PlayAudioAtLocation("critch", transform.position);
-                        attachPoint.AttachLimb(heldMovableObject as Limb);
+                        attachPoint.AttachLimb(heldMovableObject as Limb, true);
                     }
                 }
                 heldMovableObject = null;

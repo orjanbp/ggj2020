@@ -15,6 +15,8 @@ public class Limb : MovableObject, IHightlightableObject
     public Vector3 anchorPointOffset;
 
     public Renderer limbRenderer;
+    public Material opaqueMat;
+    public Material transpMat;
 
     private Rigidbody localRigidbody;
     private AttachPoint currentAttachPoint;
@@ -41,7 +43,7 @@ public class Limb : MovableObject, IHightlightableObject
 
         if (limbRenderer != null)
         {
-            limbRenderer.material.SetFloat("_Transparency", 0.5f);
+            limbRenderer.material = transpMat;
         }
     }
 
@@ -58,7 +60,7 @@ public class Limb : MovableObject, IHightlightableObject
 
         if (limbRenderer != null)
         {
-            limbRenderer.material.SetFloat("_Transparency", 1.0f);
+            limbRenderer.material = opaqueMat;
         }
     }
 
