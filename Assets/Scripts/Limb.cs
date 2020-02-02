@@ -13,6 +13,11 @@ public class Limb : MovableObject, IHightlightableObject
     public LimbType limbType_;
 
     public Vector3 anchorPointOffset;
+
+    public Renderer limbRenderer;
+    public Material opaqueMat;
+    public Material transpMat;
+
     private Rigidbody localRigidbody;
     private AttachPoint currentAttachPoint;
     // Start is called before the first frame update
@@ -35,6 +40,11 @@ public class Limb : MovableObject, IHightlightableObject
         gameObject.layer = LayerMask.NameToLayer("HeldObject");
         Debug.Log("On drag start, set to layer " + LayerMask.LayerToName(gameObject.layer));
         transform.eulerAngles = Vector3.zero;
+
+        if (limbRenderer != null)
+        {
+            limbRenderer.material = transpMat;
+        }
     }
 
     public override void OnMoveInDirection(Vector2 direction)
@@ -47,6 +57,11 @@ public class Limb : MovableObject, IHightlightableObject
         Debug.Log("On Drag end");
         //localRigidbody.isKinematic = false;
         gameObject.layer = LayerMask.NameToLayer("Limb");
+
+        if (limbRenderer != null)
+        {
+            limbRenderer.material = opaqueMat;
+        }
     }
 
     public override Vector3 GetMoveOffset() {
@@ -60,12 +75,18 @@ public class Limb : MovableObject, IHightlightableObject
 
     public void HightlightStart()
     {
-
+        if(limbRenderer != null)
+        {
+            limbRenderer.material.SetFloat("_Highlighted", 1.0f);
+        }
     }
 
     public void HightlightEnd()
     {
-
+        if(limbRenderer != null)
+        {
+            limbRenderer.material.SetFloat("_Highlighted", 0.0f);
+        }
     }
 
     public GameObject GetGameObject()
