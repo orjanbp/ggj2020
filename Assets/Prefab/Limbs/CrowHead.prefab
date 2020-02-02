@@ -419,6 +419,21 @@ PrefabInstance:
       propertyPath: anchorPointOffset.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1982933915691998165, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
+        type: 3}
+      propertyPath: limbRenderer
+      value: 
+      objectReference: {fileID: 958982820909306944}
+    - target: {fileID: 1982933915691998165, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
+        type: 3}
+      propertyPath: opaqueMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 46fdb8d1eea9d6344b2fa51a3e20c6ea, type: 2}
+    - target: {fileID: 1982933915691998165, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
+        type: 3}
+      propertyPath: transpMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 3a0f3ded58aea8f478b0db11b539ab0c, type: 2}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Size.x

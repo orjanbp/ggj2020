@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 0622714d7ec2c06419a758e9c2a4f33d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -124,6 +124,21 @@ PrefabInstance:
       propertyPath: anchorPointOffset.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 948263800642080595, guid: 8c3e15c594096e045b6e49d1e7729691,
+        type: 3}
+      propertyPath: limbRenderer
+      value: 
+      objectReference: {fileID: 890775801102600050}
+    - target: {fileID: 948263800642080595, guid: 8c3e15c594096e045b6e49d1e7729691,
+        type: 3}
+      propertyPath: opaqueMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 0622714d7ec2c06419a758e9c2a4f33d, type: 2}
+    - target: {fileID: 948263800642080595, guid: 8c3e15c594096e045b6e49d1e7729691,
+        type: 3}
+      propertyPath: transpMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 33f12ac5c6deba147aa60a3a1eb022cc, type: 2}
     - target: {fileID: 1279465063333146695, guid: 8c3e15c594096e045b6e49d1e7729691,
         type: 3}
       propertyPath: m_LocalPosition.x
