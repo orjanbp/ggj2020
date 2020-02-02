@@ -20,7 +20,7 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
     void Start()
     {
         // Hide attachment point on creation
-        m_Renderer = GetComponentInChildren<MeshRenderer>();
+        m_Renderer = GetComponent<MeshRenderer>();
         m_Renderer.enabled = false;
 
         animal = gameObject.GetComponentInParent<Animal>()?.animal;
