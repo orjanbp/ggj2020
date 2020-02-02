@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClinicAnimalSpawner : MonoBehaviour
 {
-    public GameObject animalPrefab;
+    public GameObject[] allAnimalPrefabs;
     public Transform animalSpawnPoint;
     public Rigidbody operatingTable;
     Animal currentAnimal;
@@ -47,7 +47,7 @@ public class ClinicAnimalSpawner : MonoBehaviour
             operatingTable.MovePosition(operatingTable.position - Vector3.up * Time.deltaTime * tableSpeed);
             yield return null;
         }
-        currentAnimal = Instantiate(animalPrefab, animalSpawnPoint.position, animalSpawnPoint.rotation).GetComponent<Animal>();
+        currentAnimal = Instantiate(allAnimalPrefabs[Random.Range(0, allAnimalPrefabs.Length)], animalSpawnPoint.position, animalSpawnPoint.rotation).GetComponent<Animal>();
         currentAnimal.animal = new string[] { "cat", "dog", "crow" }[Random.Range(0, 3)];
         currentAnimal.transform.parent = animalSpawnPoint.transform;
         while (operatingTable.position.y < startHeight) {

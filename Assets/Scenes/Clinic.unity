@@ -1118,8 +1118,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45a40c0f964ff543bb59f82db87b8a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalPrefab: {fileID: 7917336422831932174, guid: 4a478faad12e6ab44ba3c201808e0729,
-    type: 3}
+  allAnimalPrefabs:
+  - {fileID: 5595075024648264962, guid: ff94b76d5126a454183a81a6c9178678, type: 3}
+  - {fileID: 1910875983007988947, guid: 7de156aa151ae54488d9cf8094247e3c, type: 3}
+  - {fileID: 5054596122531037024, guid: 971a2c28f915b794590094aaf236e392, type: 3}
+  - {fileID: 8962674828063661807, guid: 95c0ccb8f759fb64ab40db9bb1791f7b, type: 3}
   animalSpawnPoint: {fileID: 1757020725}
   operatingTable: {fileID: 660825327}
   endHeight: -8.32
