@@ -23,7 +23,7 @@ public class Animal : MonoBehaviour
             attachPoints[i].SetAnimalRef(this);
             if (!debugKeepAllLimbs && (i == firstMissingLimb || Random.value < 0.25f))
                 continue;
-            var limbPrefab = m_LimbManager.FetchLimb(animal, attachPoints[i].limbType);
+            var limbPrefab = m_LimbManager.FetchLimb(animalType, attachPoints[i].limbType_);
             var attPos = attachPoints[i].transform.position;
             var attRot = attachPoints[i].transform.rotation;
 

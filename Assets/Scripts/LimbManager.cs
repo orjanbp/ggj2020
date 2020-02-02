@@ -7,7 +7,7 @@ public class LimbManager : MonoBehaviour
     // Start is called before the first frame update
     public Limb[] limbList;
 
-    public Limb FetchLimb(string limbAnimal = "", string limbType = "")
+    public Limb FetchLimb(AnimalType limbAnimal, LimbType limbType)
     {
         // First get all limbs that have the right animal
         var limbsForAnimal = new List<Limb>();
@@ -15,22 +15,23 @@ public class LimbManager : MonoBehaviour
 
         foreach (Limb limb in limbList)
         {
-            if (limb.animal == limbAnimal)
+            if (limb.animalType == limbAnimal && limb.limbType_ == limbType)
             {
-                limbsForAnimal.Add(limb);
+                return limb;
+                //limbsForAnimal.Add(limb);
                 //Debug.Log("Adding limb ... " + limb.limbType + " for " + limb.animal);
             }
         }
 
         // Then N+1 all limbs of right type
-        foreach (Limb limb in limbsForAnimal)
-        {
-            if (limb.limbType == limbType)
-            {
-                //Debug.Log("Returning limb ... " + limb.limbType);
-                return limb;
-            }
-        }
+        //foreach (Limb limb in limbsForAnimal)
+        //{
+        //    if (limb.limbType == limbType)
+        //    {
+        //        //Debug.Log("Returning limb ... " + limb.limbType);
+        //        return limb;
+        //    }
+        //}
 
         // Fallback
         var randLimb = limbList[Random.Range(0, limbList.Length)];

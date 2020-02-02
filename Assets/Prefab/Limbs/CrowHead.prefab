@@ -94,6 +94,19 @@ Transform:
   m_Father: {fileID: 7728471528472698966}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8105238974268966200
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5801005033982372502}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.22938488, y: 0.38482305, z: 0.25978062}
+  m_Center: {x: 0.001419415, y: -0.1402598, z: 0.02000604}
 --- !u!1 &6558869033083224507
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,19 +195,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00002397818, y: 0.0015397482, z: 0.0009160163}
     m_Extent: {x: 0.001378749, y: 0.002178472, z: 0.0028139409}
   m_DirtyAABB: 0
---- !u!65 &8105238974268966200
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801005033982372502}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.22938488, y: 0.38482305, z: 0.25978062}
-  m_Center: {x: 0.001419415, y: -0.1402598, z: 0.02000604}
 --- !u!1 &7262071691957176704
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,6 +434,11 @@ PrefabInstance:
       propertyPath: transpMat
       value: 
       objectReference: {fileID: 2100000, guid: 3a0f3ded58aea8f478b0db11b539ab0c, type: 2}
+    - target: {fileID: 1982933915691998165, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
+        type: 3}
+      propertyPath: animalType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Size.x

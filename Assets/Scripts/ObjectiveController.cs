@@ -63,6 +63,8 @@ public class ObjectiveController : MonoBehaviour
 
         foreach (AttachPoint aPoint in anchorPoints)
         {
+            if (aPoint == null)
+                continue;
             string rightLimbType = aPoint.GetComponent<AttachPoint>().limbType;
             Limb foundLimb = aPoint.GetComponentInChildren<Limb>();
 

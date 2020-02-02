@@ -217,6 +217,16 @@ PrefabInstance:
       propertyPath: transpMat
       value: 
       objectReference: {fileID: 2100000, guid: 4790dc53165388c42aa75e2af5937a60, type: 2}
+    - target: {fileID: 1982933915691998165, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
+        type: 3}
+      propertyPath: animalType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982933915691998165, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
+        type: 3}
+      propertyPath: limbType_
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Size.x

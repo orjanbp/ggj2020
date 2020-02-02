@@ -172,7 +172,7 @@ MonoBehaviour:
   c_GameState: {fileID: 6276119303377923132, guid: f2555fdfb08637148a7b9391064e3e9b,
     type: 3}
   animal: dog
-  animalType: 0
+  animalType: 1
   debugKeepAllLimbs: 0
 --- !u!1001 &3217700370195667169
 PrefabInstance:
