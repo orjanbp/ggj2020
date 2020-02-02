@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Counter
+  m_Name: Cupboard
   m_Shader: {fileID: -6465566751694194690, guid: 9ff2d3759be45bc49970f3ee9d79b3fe,
     type: 3}
   m_ShaderKeywords: 
@@ -33,7 +33,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 62c1eba88a220f84580cb37fcd7d4779, type: 3}
+        m_Texture: {fileID: 2800000, guid: 76b77405eec858444a2d931fccbd5eea, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
