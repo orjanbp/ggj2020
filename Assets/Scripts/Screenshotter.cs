@@ -19,7 +19,6 @@ public class Screenshotter : MonoBehaviour
     }
 
     void _ScreenshotAndStore() {
-        Debug.LogError("Going to take and store screenshot!");
         RenderTexture rt = new RenderTexture(256, 256, 24);
         animalCam.targetTexture = rt;
         Texture2D screenShot = new Texture2D(256, 256, TextureFormat.RGB24, false);
@@ -30,8 +29,6 @@ public class Screenshotter : MonoBehaviour
         RenderTexture.active = null; // JC: added to avoid errors
         screenShot.Apply();
         Destroy(rt);
-
-        Debug.LogError("This object will receive screenshot " + screenshotPictureFrames[currentScreenshotRendererInSequence].name, screenshotPictureFrames[currentScreenshotRendererInSequence]);
 
         screenshotPictureFrames[currentScreenshotRendererInSequence].material.SetTexture("_BaseMap", screenShot);
         currentScreenshotRendererInSequence++;

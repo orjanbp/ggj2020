@@ -3018,6 +3018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f6287906490d4743bfafe50ef55e229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  draggableLever: {fileID: 1533599490}
   eventOnTrigger:
     m_PersistentCalls:
       m_Calls:
