@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &4526645042620668961
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 673209305193820418}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.23286328, y: 0.23374745, z: 0.37063932}
-  m_Center: {x: 0.003473361, y: -0.3119835, z: -0.1861181}
 --- !u!1 &1030656388223781606
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +111,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cb3a0dab58a5904418f918a241db664b, type: 2}
+  - {fileID: 2100000, guid: 1c3645e5b81bc4d49be78b046a877523, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -163,6 +150,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0000023017637, y: 0.0031276143, z: 0.000559147}
     m_Extent: {x: 0.0035355766, y: 0.0032808862, z: 0.002523494}
   m_DirtyAABB: 0
+--- !u!65 &4526645042620668961
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673209305193820418}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.23286328, y: 0.23374745, z: 0.37063932}
+  m_Center: {x: 0.003473361, y: -0.3119835, z: -0.1861181}
 --- !u!1 &4893087578153017371
 GameObject:
   m_ObjectHideFlags: 0
