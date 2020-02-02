@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2466604851740066237}
   - component: {fileID: 6872531189265595275}
   - component: {fileID: 890775801102600050}
-  - component: {fileID: 5154550731477663161}
   m_Layer: 0
   m_Name: ggj20_bunsentorch
   m_TagString: Untagged
@@ -26,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468311826577896366}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6483715203788216058}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 90, z: 0}
 --- !u!33 &6872531189265595275
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -80,21 +79,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5154550731477663161
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468311826577896366}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5455074751743771116, guid: 3c3b2c08edf88d546a122b0540d3132c, type: 3}
---- !u!65 &564956935106468241
+--- !u!65 &5395523526788683349
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,8 +90,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.026393324, y: 0.21351425, z: 0.051342916}
-  m_Center: {x: 0.0005197674, y: 0.40675718, z: -0.0036384217}
+  m_Size: {x: 0.14397812, y: 0.58281153, z: 0.1481185}
+  m_Center: {x: -0.0017112892, y: 0.20859425, z: -0.004252116}
 --- !u!1001 &5204852827996169917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117,7 +102,7 @@ PrefabInstance:
     - target: {fileID: 948263800642080595, guid: 8c3e15c594096e045b6e49d1e7729691,
         type: 3}
       propertyPath: anchorPointOffset.y
-      value: 0.23
+      value: 1.37
       objectReference: {fileID: 0}
     - target: {fileID: 948263800642080595, guid: 8c3e15c594096e045b6e49d1e7729691,
         type: 3}
@@ -239,7 +224,13 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: -0.0019213011
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3463605871607704879, guid: 8c3e15c594096e045b6e49d1e7729691,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3463605871607704879, guid: 8c3e15c594096e045b6e49d1e7729691, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8c3e15c594096e045b6e49d1e7729691, type: 3}
 --- !u!1 &7972035225891596595 stripped
 GameObject:
