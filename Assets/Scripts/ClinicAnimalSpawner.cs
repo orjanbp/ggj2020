@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ClinicAnimalSpawner : MonoBehaviour
 {
+    public ObjectiveController objectiveController;
     public GameObject[] allAnimalPrefabs;
     public Transform animalSpawnPoint;
     public Rigidbody operatingTable;
@@ -48,7 +49,7 @@ public class ClinicAnimalSpawner : MonoBehaviour
             yield return null;
         }
         currentAnimal = Instantiate(allAnimalPrefabs[Random.Range(0, allAnimalPrefabs.Length)], animalSpawnPoint.position, animalSpawnPoint.rotation).GetComponent<Animal>();
-        currentAnimal.animal = new string[] { "cat", "dog", "crow" }[Random.Range(0, 3)];
+        //currentAnimal.animal = new string[] { "cat", "dog", "crow" }[Random.Range(0, 3)];
         currentAnimal.transform.parent = animalSpawnPoint.transform;
         while (operatingTable.position.y < startHeight) {
             operatingTable.MovePosition(operatingTable.position + Vector3.up * Time.deltaTime * tableSpeed);
@@ -56,6 +57,7 @@ public class ClinicAnimalSpawner : MonoBehaviour
         }
         operatingTable.MovePosition(new Vector3(operatingTable.position.x, startHeight, operatingTable.position.z));
         spawningAnimal = false;
+        objectiveController.OnNewAnimal(currentAnimal);
     }
 
     IEnumerator RedeemAnimalRoutine() {
@@ -63,6 +65,7 @@ public class ClinicAnimalSpawner : MonoBehaviour
         float startingY = operatingTable.position.y;
         bool animalAscending = false;
         float timer = 0f;
+        objectiveController.OnRedeemAnimal();
         while (timer <= 1f) {
             float curveAdd = redeemAnimalCurve.Evaluate(timer);
             operatingTable.MovePosition(new Vector3(operatingTable.position.x, startingY + curveAdd, operatingTable.position.z));
