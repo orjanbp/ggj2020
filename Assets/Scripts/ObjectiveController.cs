@@ -48,9 +48,20 @@ public class ObjectiveController : MonoBehaviour
         //writeResultLetter();
     }
 
+    void resetTrackers ()
+    {
+        howManyLimbs = 0;
+        howManyLimbsRightType = 0;
+        howManyLimbsRightAnimal = 0;
+        hasHead = false;
+        hasRightHead = false;
+    }
+
     void getLimbStatus (AttachPoint[] anchorPoints)
     {
-        foreach(AttachPoint aPoint in anchorPoints)
+        resetTrackers();
+
+        foreach (AttachPoint aPoint in anchorPoints)
         {
             string rightLimbType = aPoint.GetComponent<AttachPoint>().limbType;
             Limb foundLimb = aPoint.GetComponentInChildren<Limb>();

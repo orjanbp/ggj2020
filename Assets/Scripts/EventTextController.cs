@@ -15,12 +15,14 @@ public class EventTextController : MonoBehaviour
     public TextMeshProUGUI ObjectiveLimbs;
     public TextMeshProUGUI ObjectiveLimbTypes;
     public TextMeshProUGUI ObjectiveHead;
+    public TextMeshProUGUI ScoreTracker;
 
     private void Start()
     {
         ObjectiveLimbs.text = "";
         ObjectiveLimbTypes.text = "";
         ObjectiveHead.text = "";
+        ScoreTracker.text = "";
     }
 
     public void SpawnAnimalText (string animalName)
@@ -39,7 +41,10 @@ public class EventTextController : MonoBehaviour
     {
         string newText;
 
-        newText = "There's " + rightLimbs + " out of " + allLimbs + " limbs.";
+        newText = "What do you even call this thing?!";
+
+        if (rightLimbs > allLimbs / 2)
+            newText = "It's mostly a " + animalName + ", at least.";
 
         if (rightLimbs == allLimbs)
             newText = "Now that's what I call a " + animalName + "!";
@@ -51,7 +56,18 @@ public class EventTextController : MonoBehaviour
     {
         string newText;
 
-        newText = "There's " + rightLimbs + " out of " + rightLimbs + " limbs.";
+        newText = "It's barely even an animal!";
+
+        if (rightLimbs > 2)
+            newText = "Is there anything on there as it should be?";
+
+        if (rightLimbs > actualLimbs / 2)
+            newText = "It's almost all where it should be at.";
+
+        if (rightLimbs == actualLimbs)
+            newText = "Right parts in the right place.";
+
+
         ObjectiveLimbTypes.text = newText;
     }
 
@@ -59,7 +75,36 @@ public class EventTextController : MonoBehaviour
     {
         string newText;
 
-        newText = "Has a head? " + (hasHead ? "Yes" : "No") + ". Is it right? " + (hasRightHead ? "Yes" : "No") + ".";
+        newText = "";
+
+        if (!hasHead)
+            newText = "Shouldn't there be a head on there?";
+
+        if (hasHead && !hasRightHead)
+            newText = "At least it's some kind of a head.";
+
+        if (hasHead && hasRightHead)
+            newText = "That's the right head. Great!";
+
         ObjectiveHead.text = newText;
+    }
+
+    public void UpdateScoreText (int score)
+    {
+        Debug.Log("Updating score text!!!");
+        ScoreTracker.text = "SCORE: " + score;
+
+        if (score < 0)
+        {
+            ScoreTracker.color = new Color(255, 146, 146);
+        }
+        else if (score > 500)
+        {
+            ScoreTracker.color = new Color(162, 255, 146);
+        }
+        else
+        {
+            ScoreTracker.color = new Color(255, 255, 255);
+        }
     }
 }
