@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &4034694791472857091
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4016061448951034682}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.045191586, y: 0.395746, z: 0.07033026}
+  m_Center: {x: -0.0006676416, y: -0.34485993, z: -0.08101472}
 --- !u!1 &7863624824680530598
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +71,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 3fe82c0a9bb8f1d4c9ec7a567e9cfe71, type: 3}
+  - {fileID: 2100000, guid: a09d9b4eef488424296bdef428d362d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -166,35 +179,40 @@ PrefabInstance:
       propertyPath: animal
       value: cat
       objectReference: {fileID: 0}
+    - target: {fileID: 1982933915691998165, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
+        type: 3}
+      propertyPath: anchorPointOffset.y
+      value: -0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Size.z
-      value: 0.20859396
+      value: 0.1605197
       objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Center.z
-      value: 0.0014861524
+      value: -0.003855447
       objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.6958498
+      value: 0.28479695
       objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Center.y
-      value: -0.22087774
+      value: -0.04472992
       objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.14604424
+      value: 0.111323915
       objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Center.x
-      value: 0.005338689
+      value: -0.0013383031
       objectReference: {fileID: 0}
     - target: {fileID: 3473721007679347464, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
@@ -203,6 +221,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6394063a1d6c2834b90b6a2e3e523cdf, type: 3}
+--- !u!1 &4016061448951034682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3473721007679347464, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 544592808121985074}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &64028895009967347 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 535279329680680129, guid: 6394063a1d6c2834b90b6a2e3e523cdf,

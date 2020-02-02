@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 3fe82c0a9bb8f1d4c9ec7a567e9cfe71, type: 3}
+  - {fileID: 2100000, guid: a09d9b4eef488424296bdef428d362d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -166,6 +166,11 @@ PrefabInstance:
       propertyPath: animal
       value: cat
       objectReference: {fileID: 0}
+    - target: {fileID: 1982933915691998165, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
+        type: 3}
+      propertyPath: anchorPointOffset.y
+      value: -0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Size.x
@@ -174,12 +179,12 @@ PrefabInstance:
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.5472135
+      value: 0.4924571
       objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Size.z
-      value: 0.09444466
+      value: 0.049681187
       objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
@@ -189,12 +194,12 @@ PrefabInstance:
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Center.y
-      value: -0.20860669
+      value: -0.2104319
       objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Center.z
-      value: -0.002777671
+      value: -0.0039542466
       objectReference: {fileID: 0}
     - target: {fileID: 3473721007679347464, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}

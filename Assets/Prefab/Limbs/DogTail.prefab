@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bfe179c1db7fa1b49b370df86faf971a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -165,6 +165,16 @@ PrefabInstance:
         type: 3}
       propertyPath: limbType
       value: tail
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982933915691998165, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
+        type: 3}
+      propertyPath: anchorPointOffset.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982933915691998165, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
+        type: 3}
+      propertyPath: anchorPointOffset.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
