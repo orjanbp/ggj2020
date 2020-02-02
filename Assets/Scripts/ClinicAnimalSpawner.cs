@@ -59,6 +59,7 @@ public class ClinicAnimalSpawner : MonoBehaviour
     }
 
     IEnumerator RedeemAnimalRoutine() {
+        Screenshotter.ScreenshotAndStore();
         float startingY = operatingTable.position.y;
         bool animalAscending = false;
         float timer = 0f;
