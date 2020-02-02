@@ -172,6 +172,7 @@ MonoBehaviour:
   c_GameState: {fileID: 6276119303377923132, guid: f2555fdfb08637148a7b9391064e3e9b,
     type: 3}
   animal: cat
+  animalType: 0
   debugKeepAllLimbs: 0
 --- !u!1001 &2117803577499441932
 PrefabInstance:
@@ -199,6 +200,11 @@ PrefabInstance:
         type: 3}
       propertyPath: animal
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: limbType_
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4026320121757408685, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
@@ -307,6 +313,11 @@ PrefabInstance:
       propertyPath: limbAnimal
       value: cat
       objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: limbType_
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4026320121757408685, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -414,6 +425,11 @@ PrefabInstance:
       propertyPath: limbAnimal
       value: cat
       objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: limbType_
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4026320121757408685, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -520,6 +536,11 @@ PrefabInstance:
         type: 3}
       propertyPath: limbAnimal
       value: cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: limbType_
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4026320121757408685, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}
@@ -739,6 +760,11 @@ PrefabInstance:
         type: 3}
       propertyPath: limbAnimal
       value: cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023557593104723931, guid: a07142a4802b49a4dbdb8958cd535148,
+        type: 3}
+      propertyPath: limbType_
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4026320121757408685, guid: a07142a4802b49a4dbdb8958cd535148,
         type: 3}

@@ -7,6 +7,9 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
     public string limbType; // Identify type of limb
     public string animal;   // Type of animal, inherited from Animal
 
+    public AnimalType animalType;
+    public LimbType limbType_;
+
     Animal currentAnimalRef;
     Limb currentLimb;
     MeshRenderer m_Renderer;
@@ -37,6 +40,14 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
         limb.GetComponent<Rigidbody>().useGravity = false;
         limb.GetComponent<Rigidbody>().isKinematic = true;
         limb.transform.parent = transform;
+
+        //Special for weird heads
+        if (limbType_ != LimbType.Head && limb.limbType_ == LimbType.Head) {
+            limb.transform.localPosition = Vector3.zero;
+            if (limbType_ != LimbType.HindLeg)
+                limb.transform.localEulerAngles = new Vector3(0f, 180f, 0f);
+        }
+
         limb.SetAttachPoint(this);
         currentLimb = limb;
         localCollider.enabled = false;
