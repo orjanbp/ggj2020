@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ObjectiveController : MonoBehaviour
 {
+    public Component LetterUI;
+    protected string resultMessage;
+
     protected AttachPoint[] limbAttachPoints;
 
     protected string rightAnimal;
@@ -34,6 +37,7 @@ public class ObjectiveController : MonoBehaviour
     {
         resetLimbCriterias();
         getLimbStatus(limbAttachPoints);
+        writeResultLetter();
     }
 
     void resetLimbCriterias ()
@@ -72,10 +76,17 @@ public class ObjectiveController : MonoBehaviour
                     hasRightHead = true;
             }
         }
+    }
 
-        Debug.Log("Checkup finished :: " +
-            numLimbsRightAnimal + " of " + totalLimbs + " are " + rightAnimal +
-            " and " + numLimbsRightType + "of " + totalLimbs + " are in the right place."
-        );
+    void writeResultLetter ()
+    {
+        resultMessage = "Checkup finished. ";
+        resultMessage += "The animal was a " + rightAnimal + " ";
+        resultMessage += "and " + numLimbsRightAnimal + " limbs were " + rightAnimal + " limbs.";
+        resultMessage += "\n";
+        resultMessage += numLimbsRightType + " limbs were in the right place.";
+
+        LetterUI.GetComponent<Canvas>().enabled = true;
+        LetterUI.GetComponentInChildren<UnityEngine.UI.Text>().text = resultMessage;
     }
 }
