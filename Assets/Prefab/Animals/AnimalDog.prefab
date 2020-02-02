@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3993033831594688740}
   - component: {fileID: 1913280287116677070}
   - component: {fileID: 4851618543593537290}
-  - component: {fileID: 3279163764676614824}
   m_Layer: 0
   m_Name: Body_Dog
   m_TagString: Untagged
@@ -80,20 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3279163764676614824
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 821213076559178477}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3882767516413662095, guid: 172d110b928f44f4aa1144e29a8aa190, type: 3}
 --- !u!1 &3217700369259136784
 GameObject:
   m_ObjectHideFlags: 0

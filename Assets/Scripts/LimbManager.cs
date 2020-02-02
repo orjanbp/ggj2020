@@ -18,7 +18,7 @@ public class LimbManager : MonoBehaviour
             if (limb.animal == limbAnimal)
             {
                 limbsForAnimal.Add(limb);
-                Debug.Log("Adding limb ... " + limb.limbType + " for " + limb.animal);
+                //Debug.Log("Adding limb ... " + limb.limbType + " for " + limb.animal);
             }
         }
 
@@ -27,14 +27,14 @@ public class LimbManager : MonoBehaviour
         {
             if (limb.limbType == limbType)
             {
-                Debug.Log("Returning limb ... " + limb.limbType);
+                //Debug.Log("Returning limb ... " + limb.limbType);
                 return limb;
             }
         }
 
         // Fallback
         var randLimb = limbList[Random.Range(0, limbList.Length)];
-        Debug.LogError("Fallback limb: " + randLimb.animal + " " + randLimb.limbType);
+        //Debug.LogError("Fallback limb: " + randLimb.animal + " " + randLimb.limbType);
         return randLimb;
     }
 }
