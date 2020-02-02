@@ -59,6 +59,8 @@ MonoBehaviour:
   - {fileID: 9048866280486409478}
   m_LimbManager: {fileID: 6651007617514637397, guid: e5c28d8a64e5cb0488f417a7b8e137d6,
     type: 3}
+  c_GameState: {fileID: 6276119303377923132, guid: f2555fdfb08637148a7b9391064e3e9b,
+    type: 3}
   animal: cow
   debugKeepAllLimbs: 0
 --- !u!1 &5350992826752591148

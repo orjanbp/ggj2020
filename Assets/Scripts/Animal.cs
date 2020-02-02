@@ -6,13 +6,16 @@ public class Animal : MonoBehaviour
 {
     public AttachPoint[] attachPoints;
     public LimbManager m_LimbManager;
+    public GameStateController c_GameState;
 
     public string animal;
     public bool debugKeepAllLimbs;
-
+    
     // Start is called before the first frame update
     void Start()
     {
+        c_GameState = GameObject.Find("GameStateManager").GetComponent<GameStateController>();
+
         int firstMissingLimb = Random.Range(0, attachPoints.Length);
         for (int i = 0; i < attachPoints.Length; i++)
         {
@@ -30,7 +33,10 @@ public class Animal : MonoBehaviour
         }
     }
 
-
+    public void OnChangeLimbs()
+    {
+        c_GameState.OnUpdateAnimal(this);
+    }
 
     // Update is called once per frame
     void Update()

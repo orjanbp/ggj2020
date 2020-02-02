@@ -24,7 +24,6 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
         m_Renderer.enabled = false;
 
         animal = gameObject.GetComponentInParent<Animal>()?.animal;
-        
     }
 
     public void SetAnimalRef(Animal newAnimalRef) {
@@ -41,6 +40,9 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
         limb.SetAttachPoint(this);
         currentLimb = limb;
         localCollider.enabled = false;
+
+        // tell the parent what has happened
+        if (currentAnimalRef) currentAnimalRef.OnChangeLimbs();
     }
     public void DetachLimb() {
         if (currentLimb != null) { 
@@ -50,6 +52,9 @@ public class AttachPoint : MonoBehaviour, IHightlightableObject
             currentLimb.SetAttachPoint(null);
             currentLimb = null;
             localCollider.enabled = true;
+
+            // tell the parent what has happened
+            if (currentAnimalRef) currentAnimalRef.OnChangeLimbs();
         }
     }
 
