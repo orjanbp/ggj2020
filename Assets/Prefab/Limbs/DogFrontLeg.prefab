@@ -86,6 +86,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5830854475371711278, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 535279329680680129, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -169,7 +174,7 @@ PrefabInstance:
     - target: {fileID: 1982933915691998165, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: anchorPointOffset.y
-      value: -0.1
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}

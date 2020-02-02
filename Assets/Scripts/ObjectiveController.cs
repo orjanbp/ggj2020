@@ -37,7 +37,7 @@ public class ObjectiveController : MonoBehaviour
     {
         resetLimbCriterias();
         getLimbStatus(limbAttachPoints);
-        writeResultLetter();
+        //writeResultLetter();
     }
 
     void resetLimbCriterias ()
