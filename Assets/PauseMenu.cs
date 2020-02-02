@@ -46,7 +46,7 @@ public class PauseMenu : MonoBehaviour
     public void ReturnToMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Dr. Limb's Clinic Main Menu");
+        SceneManager.LoadScene("MenuScene");
         Debug.Log("Quit");
     }
 }
