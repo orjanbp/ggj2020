@@ -6,19 +6,22 @@ public class ObjectiveController : MonoBehaviour
 {
     public Component LetterUI;
     protected string resultMessage;
+    protected GameStateController c_controller;
 
     protected AttachPoint[] limbAttachPoints;
 
-    protected string rightAnimal;
-    protected int totalLimbs;
-
-    protected int numLimbsRightAnimal;
-    protected int numLimbsRightType;
-    protected bool hasRightHead;
+    public string rightAnimal;
+    public int totalLimbs;
+    public int howManyLimbs = 0;
+    public int howManyLimbsRightType = 0;
+    public int howManyLimbsRightAnimal = 0;
+    public bool hasHead = false;
+    public bool hasRightHead = false;
 
     private void Start()
     {
         Debug.Log("Good morning objectives!");
+        c_controller = GetComponent<GameStateController>();
     }
 
     public void OnNewAnimal (Animal animal)
@@ -29,64 +32,60 @@ public class ObjectiveController : MonoBehaviour
 
         Debug.Log("Got animal :: " + animal.animal);
 
-        resetLimbCriterias();
+        getLimbStatus(limbAttachPoints);
+    }
+
+    public void OnUpdateAnimal (Animal animal)
+    {
+        if (limbAttachPoints == null) return;
+        
         getLimbStatus(limbAttachPoints);
     }
 
     public void OnRedeemAnimal ()
     {
-        resetLimbCriterias();
         getLimbStatus(limbAttachPoints);
         //writeResultLetter();
     }
 
-    void resetLimbCriterias ()
-    {
-        numLimbsRightAnimal = 0;
-        numLimbsRightType = 0;
-        hasRightHead = false;
-    }
-
     void getLimbStatus (AttachPoint[] anchorPoints)
     {
-        string rightLimbType;
-        Limb foundLimb;
-
         foreach(AttachPoint aPoint in anchorPoints)
         {
-            rightLimbType = aPoint.GetComponent<AttachPoint>().limbType;
-            foundLimb = aPoint.GetComponentInChildren<Limb>();
+            string rightLimbType = aPoint.GetComponent<AttachPoint>().limbType;
+            Limb foundLimb = aPoint.GetComponentInChildren<Limb>();
 
-            if (!foundLimb)
+            if (foundLimb)
             {
-                Debug.Log("Missing:: " + rightAnimal + " " + rightLimbType);
-            }
-            else
-            {
-                Debug.Log("Found limb:: " + foundLimb.animal + " " + foundLimb.limbType
-                    + ", expected:: " + rightAnimal + " " + rightLimbType);
-
-                if (foundLimb.animal == rightAnimal) 
-                    numLimbsRightAnimal++;
+                howManyLimbs++;
 
                 if (foundLimb.limbType == rightLimbType) 
-                    numLimbsRightType++;
+                    howManyLimbsRightType++;
 
-                if (foundLimb.limbType == rightLimbType && foundLimb.limbType == "head" && foundLimb.animal == rightAnimal)
-                    hasRightHead = true;
+                if (foundLimb.animal == rightAnimal)
+                    howManyLimbsRightAnimal++;
+
+                if (foundLimb.limbType == rightLimbType && foundLimb.limbType == "head")
+                {
+                    hasHead = true;
+
+                    if (foundLimb.animal == rightAnimal)
+                        hasRightHead = true;
+                }
             }
         }
+        c_controller.UpdateAnimalState();
     }
 
-    void writeResultLetter ()
-    {
-        resultMessage = "Checkup finished. ";
-        resultMessage += "The animal was a " + rightAnimal + " ";
-        resultMessage += "and " + numLimbsRightAnimal + " limbs were " + rightAnimal + " limbs.";
-        resultMessage += "\n";
-        resultMessage += numLimbsRightType + " limbs were in the right place.";
+    //void writeResultLetter ()
+    //{
+    //    resultMessage = "Checkup finished. ";
+    //    resultMessage += "The animal was a " + rightAnimal + " ";
+    //    resultMessage += "and " + numLimbsRightAnimal + " limbs were " + rightAnimal + " limbs.";
+    //    resultMessage += "\n";
+    //    resultMessage += numLimbsRightType + " limbs were in the right place.";
 
-        LetterUI.GetComponent<Canvas>().enabled = true;
-        LetterUI.GetComponentInChildren<UnityEngine.UI.Text>().text = resultMessage;
-    }
+    //    LetterUI.GetComponent<Canvas>().enabled = true;
+    //    LetterUI.GetComponentInChildren<UnityEngine.UI.Text>().text = resultMessage;
+    //}
 }
