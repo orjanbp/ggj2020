@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7863624824680530598
+--- !u!1 &2453477355618034156
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6012836837512568125}
-  - component: {fileID: 8375723302667908132}
-  - component: {fileID: 8993427939834565022}
+  - component: {fileID: 5321399247046408003}
+  - component: {fileID: 1365959421960733672}
+  - component: {fileID: 7568832168072775628}
   m_Layer: 0
-  m_Name: L_HindLeg_Cat
+  m_Name: Tail_Crow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6012836837512568125
+--- !u!4 &5321399247046408003
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7863624824680530598}
+  m_GameObject: {fileID: 2453477355618034156}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.073, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 64028895009967347}
+  m_Father: {fileID: 165857121260228318}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8375723302667908132
+--- !u!33 &1365959421960733672
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7863624824680530598}
-  m_Mesh: {fileID: -5640517858103172724, guid: 21941c0eeedb3fa4282720c015520110, type: 3}
---- !u!23 &8993427939834565022
+  m_GameObject: {fileID: 2453477355618034156}
+  m_Mesh: {fileID: 7087112624405635047, guid: 9dbb4b0b972e80d4b8ba78dc87f04916, type: 3}
+--- !u!23 &7568832168072775628
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7863624824680530598}
+  m_GameObject: {fileID: 2453477355618034156}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 3fe82c0a9bb8f1d4c9ec7a567e9cfe71, type: 3}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,7 +79,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1001 &544592808121985074
+--- !u!1001 &369453063466297887
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -158,54 +158,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1982933915691998165, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
-      propertyPath: limbType
-      value: hindleg
+      propertyPath: animal
+      value: crow
       objectReference: {fileID: 0}
     - target: {fileID: 1982933915691998165, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
-      propertyPath: animal
-      value: cat
-      objectReference: {fileID: 0}
-    - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 0.20859396
-      objectReference: {fileID: 0}
-    - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
-        type: 3}
-      propertyPath: m_Center.z
-      value: 0.0014861524
+      propertyPath: limbType
+      value: tail
       objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.6958498
+      value: 0.49381208
       objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Center.y
-      value: -0.22087774
+      value: 0.25309396
       objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.14604424
+      value: 0.37317157
       objectReference: {fileID: 0}
     - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Center.x
-      value: 0.005338689
+      value: 0.0027932725
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.05551418
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791405162053581225, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.0013759136
       objectReference: {fileID: 0}
     - target: {fileID: 3473721007679347464, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
         type: 3}
       propertyPath: m_Name
-      value: CatHindLeg
+      value: CrowTail
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6394063a1d6c2834b90b6a2e3e523cdf, type: 3}
---- !u!4 &64028895009967347 stripped
+--- !u!4 &165857121260228318 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 535279329680680129, guid: 6394063a1d6c2834b90b6a2e3e523cdf,
     type: 3}
-  m_PrefabInstance: {fileID: 544592808121985074}
+  m_PrefabInstance: {fileID: 369453063466297887}
   m_PrefabAsset: {fileID: 0}
