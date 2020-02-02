@@ -117,7 +117,7 @@ PrefabInstance:
     - target: {fileID: 948263800642080595, guid: 8c3e15c594096e045b6e49d1e7729691,
         type: 3}
       propertyPath: anchorPointOffset.y
-      value: 1.1
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 948263800642080595, guid: 8c3e15c594096e045b6e49d1e7729691,
         type: 3}
@@ -139,6 +139,16 @@ PrefabInstance:
       propertyPath: transpMat
       value: 
       objectReference: {fileID: 2100000, guid: 33f12ac5c6deba147aa60a3a1eb022cc, type: 2}
+    - target: {fileID: 948263800642080595, guid: 8c3e15c594096e045b6e49d1e7729691,
+        type: 3}
+      propertyPath: animalType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 948263800642080595, guid: 8c3e15c594096e045b6e49d1e7729691,
+        type: 3}
+      propertyPath: limbType_
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1279465063333146695, guid: 8c3e15c594096e045b6e49d1e7729691,
         type: 3}
       propertyPath: m_LocalPosition.x
