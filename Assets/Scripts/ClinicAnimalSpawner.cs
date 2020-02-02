@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClinicAnimalSpawner : MonoBehaviour
 {
-    public ObjectiveController objectiveController;
+    public GameStateController gameStateController;
     public GameObject[] allAnimalPrefabs;
     public Transform animalSpawnPoint;
     public Rigidbody operatingTable;
@@ -57,7 +57,7 @@ public class ClinicAnimalSpawner : MonoBehaviour
         }
         operatingTable.MovePosition(new Vector3(operatingTable.position.x, startHeight, operatingTable.position.z));
         spawningAnimal = false;
-        objectiveController.OnNewAnimal(currentAnimal);
+        gameStateController.OnNewAnimal(currentAnimal);
     }
 
     IEnumerator RedeemAnimalRoutine() {
@@ -65,7 +65,7 @@ public class ClinicAnimalSpawner : MonoBehaviour
         float startingY = operatingTable.position.y;
         bool animalAscending = false;
         float timer = 0f;
-        objectiveController.OnRedeemAnimal();
+        gameStateController.OnRedeemAnimal();
         while (timer <= 1f) {
             float curveAdd = redeemAnimalCurve.Evaluate(timer);
             operatingTable.MovePosition(new Vector3(operatingTable.position.x, startingY + curveAdd, operatingTable.position.z));
